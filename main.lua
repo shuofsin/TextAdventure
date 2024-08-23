@@ -3,7 +3,7 @@ function love.load()
     font = love.graphics.newFont('assets/fonts/PixelOperator8.ttf', 30)
 
     -- Text
-    totalText = "I feel old. There is a aching pain eminating from my lower back. My body no longer seems able to hold a sitting position for long anymore. I have crossed my legs rather akwardly, positioned as such to provide comfort not to myself, but instead to gift stability to my computer. It's interesting how much I bend over backwards to accomodate technology. It's predicated on the notion that it improves my life. But how much does it improve it, and how much does it change it?"
+    totalText = "You feel old. There is a aching pain eminating from your lower back. Your body no longer seems able to hold a sitting position for long anymore. You have your legs crossed rather akwardly, positioned as such to provide comfort not to yourself, but instead to gift stability to the laptop upon your lap. It's interesting how much you bend over backwards to accomodate me. It's predicated on the notion that it improves your life. But how much does it improve your life, and how much does it change it?"
     visibleText = ""
 
     -- windows information for printing
