@@ -1,45 +1,45 @@
 function love.load() 
     -- Formating information
-    font = love.graphics.newFont('assets/fonts/PixelOperator8.ttf', 30)
+    Font = love.graphics.newFont('assets/fonts/PixelOperator8.ttf', 30)
 
     -- Text
-    totalText = "You feel old. There is a aching pain eminating from your lower back. Your body no longer seems able to hold a sitting position for long anymore. You have your legs crossed rather akwardly, positioned as such to provide comfort not to yourself, but instead to gift stability to the laptop upon your lap. It's interesting how much you bend over backwards to accomodate me. It's predicated on the notion that it improves your life. But how much does it improve your life, and how much does it change it?"
-    visibleText = ""
+    TotalText = "You feel old. There is a aching pain eminating from your lower back. Your body no longer seems able to hold a sitting position for long anymore. You have your legs crossed rather akwardly, positioned as such to provide comfort not to yourself, but instead to gift stability to the laptop upon your lap. It's interesting how much you bend over backwards to accomodate me. It's predicated on the notion that it improves your life. But how much does it improve your life, and how much does it change it?"
+    VisibleText = ""
 
     -- windows information for printing
-    gameWidth = love.graphics.getWidth()
-    gameHeight = love.graphics.getHeight()
+    GameWidth = love.graphics.getWidth()
+    GameHeight = love.graphics.getHeight()
 
     -- Add a letter to the display according to a timer
-    tickBegin = love.timer.getTime() 
-    tickEnd = love.timer.getTime() 
-    writingSpeed = 0.1
-    timeBetweenTicks = writingSpeed
+    TickBegin = love.timer.getTime() 
+    TickEnd = love.timer.getTime() 
+    WritingSpeed = 0.1
+    TimeBetweenTicks = WritingSpeed
 
     -- cursor 
-    cursor = "|"
-    cursorSpeed = 0.5
+    Cursor = "|"
+    CursorSpeed = 0.5
 end 
 
 function love.update(dt)
-    tickEnd = love.timer.getTime() 
-    if tickEnd - tickBegin >= timeBetweenTicks then 
-        if #totalText ~= 0 then 
-            local c = totalText:sub(1, 1)
-            totalText = totalText:sub(2)
-            visibleText = visibleText .. c 
-            timeBetweenTicks = writingSpeed
+    TickEnd = love.timer.getTime() 
+    if TickEnd - TickBegin >= TimeBetweenTicks then
+        if #TotalText ~= 0 then
+            local c = TotalText:sub(1, 1)
+            TotalText = TotalText:sub(2)
+            VisibleText = VisibleText .. c 
+            TimeBetweenTicks = WritingSpeed
             if c == "." then 
-                timeBetweenTicks = timeBetweenTicks * 2
-            end 
-        else 
-            if cursor == "|" then cursor = "" else cursor = "|" end 
-            timeBetweenTicks = cursorSpeed
+                TimeBetweenTicks = TimeBetweenTicks * 2
+            end
+        else
+            if Cursor == "|" then Cursor = "" else Cursor = "|" end 
+            TimeBetweenTicks = CursorSpeed
         end 
-        tickBegin = love.timer.getTime() 
+        TickBegin = love.timer.getTime() 
     end 
 end 
 
 function love.draw() 
-    love.graphics.printf(visibleText .. cursor, font, 0, gameHeight * 0.01, gameWidth, "left")
+    love.graphics.printf(VisibleText .. Cursor, Font, 0, GameHeight * 0.01, GameWidth, "left")
 end 

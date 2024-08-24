@@ -1,0 +1,2 @@
+ChoiceBlock = {}
+setmetatable(Block, ChoiceBlock)

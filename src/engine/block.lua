@@ -2,17 +2,17 @@ Block = {}
 Block.__index = Block
 
 ---Creates a new block object
----@return table
+---@return table -- new block object
 function Block:new()
     local newBlock = {}
-    setmetatable(newBlock, Block)
+    setmetatable(newBlock, self)
     return newBlock
 end
 
 --- Sets mandatory parameters for block object
----@param _text string 
----@param _prev table
----@param _next table
+---@param _text string -- text to be read
+---@param _prev table -- table of blocks
+---@param _next table -- table of blocks 
 function Block:init(_text, _prev, _next)
     self.text = _text
     self.prev = _prev
@@ -20,10 +20,10 @@ function Block:init(_text, _prev, _next)
 end
 
 ---Creates a new block and initlizes it
----@param _text string
----@param _prev table
----@param _next table
----@return table
+---@param _text string -- text to be read
+---@param _prev table -- table of previous blocks 
+---@param _next table -- table of next blocks 
+---@return table -- new initilized table
 function Block:create_block(_text, _prev, _next)
     local newBlock = self:new()
     newBlock:init(_text, _prev, _next)

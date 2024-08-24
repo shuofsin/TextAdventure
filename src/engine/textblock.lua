@@ -1,0 +1,2 @@
+TextBlock = {}
+setmetatable(Block, TextBlock)
