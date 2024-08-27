@@ -1,4 +1,3 @@
 require("src/engine/block")
 
-TextBlock = {}
-setmetatable(Block, TextBlock)
+TextBlock = Block:new()

@@ -1,4 +1,3 @@
 require("src/engine/block")
 
-ChoiceBlock = {}
-setmetatable(Block, ChoiceBlock)
+ChoiceBlock = Block:new()

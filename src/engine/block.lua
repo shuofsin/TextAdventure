@@ -1,11 +1,11 @@
 Block = {}
-Block.__index = Block
 
 ---Creates a new block object
 ---@return table -- new block object
-function Block:new()
-    local newBlock = {}
-    setmetatable(newBlock, self)
+function Block:new(new)
+    local newBlock = new or {}
+    setmetatable(self, newBlock)
+    self.__index = self
     return newBlock
 end
 
@@ -24,8 +24,14 @@ end
 ---@param _prev table -- table of previous blocks 
 ---@param _next table -- table of next blocks 
 ---@return table -- new initilized table
-function Block:create_block(_text, _prev, _next)
+function Block:createBlock(_text, _prev, _next)
     local newBlock = self:new()
     newBlock:init(_text, _prev, _next)
     return newBlock
 end
+
+---Returns the text field
+---@return string -- text field 
+function Block:getText() 
+    return self.text
+end 
