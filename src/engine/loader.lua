@@ -4,8 +4,8 @@ Loader = {}
 
 function Loader:init()
     -- Block to be loaded
-    BlockTree:init() 
-    CurrentBlock = BlockTree[1]
+    --BlockTree:init() 
+    --CurrentBlock = BlockTree[1]
 
     -- Formating information
     Font = love.graphics.newFont('assets/fonts/PixelOperator8.ttf', 30)

@@ -1,4 +1,3 @@
-require("src/engine/block")
 require("src/engine/textblock")
 
 BlockTree = {}
